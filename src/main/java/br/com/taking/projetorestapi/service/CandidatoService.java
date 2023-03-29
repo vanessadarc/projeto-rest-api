@@ -13,5 +13,7 @@ public interface CandidatoService {
 	Candidato obterPorId(int id);
 	
 	Candidato atualizar(int id, Candidato newCandidato);
+	
+	Boolean deletar (int id);
 
 }

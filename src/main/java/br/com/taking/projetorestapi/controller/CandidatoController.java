@@ -54,5 +54,15 @@ public class CandidatoController {
 		}
 	}
 	
+	@RequestMapping(value="/candidato/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Object> Delete(int id){
+		boolean result = service.deletar(id);
+		if(result) { // por ser uma variavel booleanam posso colocar diretamente como condição
+			return new ResponseEntity<>(HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
 }
 	

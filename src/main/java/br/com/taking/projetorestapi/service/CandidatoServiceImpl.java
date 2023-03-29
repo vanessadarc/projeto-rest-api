@@ -53,4 +53,15 @@ public class CandidatoServiceImpl implements CandidatoService {
 			return null;
 		}
 	}
+
+	@Override
+	public Boolean deletar(int id) {
+		Optional<Candidato> result = repository.findById(id);
+		if(result.isPresent()) {
+			repository.delete(result.get());
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
